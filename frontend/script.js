@@ -31,6 +31,11 @@ const errorEl = document.getElementById("error");
  */
 async function fetchMedicines() {
     // TODO: fetch(`${BASE_URL}/medicines`), check response.ok, return the data.
+    let response
+    fetch("http://localhost:8000/medicines")
+  .then(response => response.json())
+  .then(data => console.log(data));
+    console.log(response)
 }
 
 /**

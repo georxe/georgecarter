@@ -29,13 +29,29 @@ const errorEl = document.getElementById("error");
  * TODO (Core task 1): fetch the list of medicines from /medicines.
  * Return the medicines array. Surface network/HTTP errors so the caller can show them.
  */
+
 async function fetchMedicines() {
-    // TODO: fetch(`${BASE_URL}/medicines`), check response.ok, return the data.
-    let response
-    fetch("http://localhost:8000/medicines")
-  .then(response => response.json())
-  .then(data => console.log(data));
-    console.log(response)
+    // TODO: fetch(`${BASE_URL}/medicines`), check response.ok, return the data
+    fetch(`${BASE_URL}/medicines`)
+        .then(response => {
+        if (response.ok) {
+            console.log("Successful response", response);
+            const reader = response.body.getReader()
+            let html = "";
+            const decoder = new TextDecoder("utf-8")
+            while (true) {
+                const { done, value } = reader.read();
+                if (done) break;
+                html += decoder.decode(value, { stream: true });
+            }
+            return html
+        } else {
+            console.error('Response was not successful');
+        }
+        })
+        .catch(error => {
+            console.error('There was an error fetching medicines:', error);
+        });
 }
 
 /**
@@ -48,6 +64,19 @@ function renderMedicines(data) {
     // TODO: build a table (the .results styles expect a <table>), iterate the
     // records, and render each row safely. Use the .invalid class to flag bad
     // values if you like.
+
+
+        // Parse HTML string we got into DOM
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(data, "text/html");
+
+        // locate table
+        const table = doc.querySelector("table");
+        if (!table) {
+            throw new Error("No table found in the HTML");
+        }
+
+
 }
 
 /**
@@ -64,6 +93,8 @@ async function fetchUnreliable() {
 document.getElementById("load-medicines").addEventListener("click", async () => {
     // TODO: call fetchMedicines() then renderMedicines(data),
     // showing #loading and clearing #error appropriately.
+    let data = fetchMedicines()
+    renderMedicines(data)
 });
 
 document.getElementById("load-unreliable").addEventListener("click", async () => {

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="disclaimer" id="disclaimer">
+        Disclaimer: All medicine names and prices used in this application are fictional and do not represent any real medicine(s).
+    </div>
+    <header>
+        <h1>Medicine Tracker</h1>
+    </header>
+    <main>
+        <section class="controls">
+            <button id="load-medicines" type="button">Load medicines</button>
+            <button id="load-unreliable" type="button">Load from unreliable source</button>
+        </section>
+
+        <div id="loading" class="loading" hidden>Loading...</div>
+
+        <div id="error" class="error" hidden></div>
+
+        <section id="results" class="results"></section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

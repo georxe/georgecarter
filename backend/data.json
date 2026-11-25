@@ -1,0 +1,54 @@
+{
+    "medicines": [
+        {
+            "name": "Elixirium",
+            "price": 5.99
+        },
+        {
+            "name": "Cureallium",
+            "price": 7.49
+        },
+        {
+            "name": "Healix",
+            "price": 4.99
+        },
+        {
+            "name": "Restorix",
+            "price": 12.99
+        },
+        {
+            "name": "",
+            "price": 15.49
+        },
+        {
+            "name": "Tonicast",
+            "price": null
+        },
+        {
+            "name": "Allevium",
+            "price": 19.99
+        },
+        {
+            "name": "Synthomaxi",
+            "price": 14.99
+        },
+        {
+            "name": "Magicure",
+            "price": 200.0
+        },
+        {
+            "name": null,
+            "price": 8.99
+        },
+        {
+            "price": 3.49
+        },
+        {
+            "name": "Vitalix"
+        },
+        {
+            "name": "Panaceon",
+            "price": "6.99"
+        }
+    ]
+}

@@ -1,0 +1,102 @@
+/* ---- Global styles ---- */
+
+/* CSS Reset */
+* {
+    box-sizing: border-box;
+}
+
+/* Body styles. DO NOT REMOVE OR EDIT UNLESS ABSOLUTELY NECESSARY */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 0;
+    margin: 0;
+    color: #333;
+    padding-top: 30px;
+}
+
+/* Disclaimer styles. DO NOT REMOVE OR EDIT UNLESS ABSOLUTELY NECESSARY */
+.disclaimer {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 0.5rem;
+    z-index: 1000;
+    font-weight: bold;
+    height: 30px;
+}
+
+/* ---- Your custom styles below ---- */
+
+main {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+}
+
+header {
+    text-align: center;
+}
+
+.controls {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.controls button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #888;
+    background-color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.controls button:hover {
+    background-color: #eee;
+}
+
+.loading {
+    padding: 1rem;
+    background-color: #eef;
+    border: 1px solid #99c;
+    border-radius: 4px;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.error {
+    padding: 1rem;
+    background-color: #fee;
+    border: 1px solid #c33;
+    border-radius: 4px;
+    color: #900;
+    margin-bottom: 1rem;
+}
+
+.results table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+.results th,
+.results td {
+    border: 1px solid #ccc;
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+}
+
+.results th {
+    background-color: #eee;
+}
+
+.results td.invalid {
+    color: #900;
+    font-style: italic;
+}
